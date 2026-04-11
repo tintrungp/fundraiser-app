@@ -1,0 +1,30 @@
+{
+  "goal": 10000,
+  "current": 3500,
+  "currency": "USD",
+  "title": "Support Our Mission",
+  "description": "Help us reach our fundraising goal to support our ministry work.",
+  "donationLinks": [
+    {
+      "platform": "PayPal",
+      "url": "https://paypal.com/donate",
+      "description": "One-time or recurring donations"
+    },
+    {
+      "platform": "Venmo",
+      "url": "https://venmo.com",
+      "description": "Quick mobile donations"
+    },
+    {
+      "platform": "GoFundMe",
+      "url": "https://gofundme.com",
+      "description": "View our full campaign"
+    }
+  ],
+  "updates": [
+    {
+      "date": "2024-01-15",
+      "message": "Thank you for your continued support! We've reached 35% of our goal."
+    }
+  ]
+}
