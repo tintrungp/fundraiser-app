@@ -8,7 +8,6 @@ A modern, minimalist Next.js website for managing ministry updates, blog posts, 
 - **About Page**: Information about your ministry
 - **Prayer Requests**: Form for submitting prayer requests with email notifications
 - **Fundraiser**: Visual progress bar with donation links and updates
-- **Decap CMS**: Visual admin portal for managing content
 - **MDX Support**: Write blog posts in Markdown with React components
 - **Tailwind CSS**: Clean, minimalist styling
 
@@ -16,13 +15,11 @@ A modern, minimalist Next.js website for managing ministry updates, blog posts, 
 
 ### 1. Install Dependencies
 
-The project is already initialized. Make sure all dependencies are installed:
-
 ```bash
 npm install
 ```
 
-### 2. Set Up Environment Variables
+### 2. Set Up Environment Variables (Optional - for Prayer Requests)
 
 Create a `.env.local` file in the root directory:
 
@@ -65,145 +62,178 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 ├── components/
 │   └── Navbar.tsx            # Sticky navigation bar
 ├── content/
-│   └── posts/                # MDX blog posts
+│   └── posts/                # MDX blog posts (add your posts here!)
 ├── data/
 │   └── fundraiser.json       # Fundraiser configuration
-├── lib/
-│   └── mdx.ts               # MDX utilities
-└── public/
-    └── admin/               # Decap CMS admin portal
+└── lib/
+    └── mdx.ts                # MDX utilities
 ```
 
 ## Managing Content
 
-### Blog Posts
+### Adding Blog Posts
 
-Add new blog posts by creating `.mdx` files in `content/posts/`:
+Create new `.mdx` files in the `content/posts/` directory:
+
+**Example: `content/posts/my-new-post.mdx`**
 
 ```mdx
 ---
-title: "Your Post Title"
-date: "2024-01-15"
-excerpt: "A brief summary of your post"
+title: "My New Post Title"
+date: "2024-01-20"
+excerpt: "A brief summary that appears on the home page"
 ---
 
-# Your content here
+# My Post Heading
 
-Write your post content using Markdown.
+Write your content here using Markdown.
+
+## Subheading
+
+- Bullet points work
+- Lists are supported
+- **Bold** and *italic* text
+
+You can write as much content as you need!
 ```
 
-### Fundraiser Updates
+**The post will automatically appear on the home page** sorted by date.
 
-Edit `data/fundraiser.json` to update:
-- Goal and current amounts
-- Donation platform links
-- Updates and messages
+### Updating Fundraiser Progress
 
-### Using Decap CMS
+Edit the `data/fundraiser.json` file:
 
-Access the admin portal at `/admin` when the site is deployed. You'll need to:
-
-1. Set up Netlify Identity or another authentication provider
-2. Configure Git Gateway in your Netlify settings
-3. Access `/admin` to manage content visually
-
-For local development, you can use the local backend mode by adding to `public/admin/config.yml`:
-
-```yaml
-local_backend: true
+```json
+{
+  "goal": 10000,
+  "current": 5000,
+  "currency": "USD",
+  "title": "Support Our Mission",
+  "description": "Help us reach our fundraising goal",
+  "donationLinks": [
+    {
+      "platform": "PayPal",
+      "url": "https://paypal.me/yourlink",
+      "description": "One-time or recurring donations"
+    }
+  ],
+  "updates": [
+    {
+      "date": "2024-01-20",
+      "message": "Thank you for your support! We're at 50%!"
+    }
+  ]
+}
 ```
 
-Then run: `npx decap-server`
+**Changes to this file update:**
+- Progress bar percentage (automatically calculated from goal/current)
+- Donation links
+- Fundraiser updates timeline
 
 ## Customization
 
-### Update Fundraiser Data
+### Update About Page
 
-Edit `data/fundraiser.json`:
-- Change goal and current amounts
-- Update donation links
-- Add updates
-
-### Modify About Page
-
-Edit `app/about/page.tsx` to customize your story and mission.
+Edit `app/about/page.tsx` to tell your story and share your mission.
 
 ### Styling
 
-All styling uses Tailwind CSS. The design is intentionally minimal and clean. Customize by:
-- Editing component classes
-- Modifying `tailwind.config.js`
-- Updating `app/globals.css`
+All styling uses Tailwind CSS with a minimalist design:
+- Edit component classes directly in the files
+- Global styles: `app/globals.css`
+- Tailwind config: `tailwind.config.js`
+
+### Navigation
+
+Edit `components/Navbar.tsx` to change:
+- Logo/home text
+- Navigation links
+- Styling
 
 ## Deployment
 
-### Deploy to Vercel
+### Deploy to Vercel (Recommended)
 
 1. Push your code to GitHub
-2. Import your repository in [Vercel](https://vercel.com)
-3. Add environment variables in Vercel dashboard
-4. Deploy
+2. Go to [Vercel](https://vercel.com)
+3. Import your repository
+4. Add environment variables (if using prayer requests)
+5. Deploy
 
 ### Deploy to Netlify
 
 1. Push your code to GitHub
-2. Import your repository in [Netlify](https://netlify.com)
-3. Add environment variables in Netlify dashboard
-4. Enable Netlify Identity for Decap CMS
+2. Go to [Netlify](https://netlify.com)
+3. Import your repository
+4. Add environment variables (if using prayer requests)
 5. Deploy
 
 ## Environment Variables
 
-Required for production:
+Only required if you want prayer request email notifications:
 
 - `RESEND_API_KEY`: Your Resend API key for sending emails
 - `NOTIFICATION_EMAIL`: Email address to receive prayer requests
 - `FROM_EMAIL`: Email address to send from (must be verified in Resend)
 
+## Quick Workflow
+
+### To add a new blog post:
+1. Create a new `.mdx` file in `content/posts/`
+2. Add frontmatter (title, date, excerpt)
+3. Write your content
+4. Save the file
+5. Refresh the site - it appears automatically!
+
+### To update fundraiser:
+1. Edit `data/fundraiser.json`
+2. Update `current` amount
+3. Add new updates with dates
+4. Save the file
+5. Refresh the site - progress bar updates!
+
+### To customize pages:
+1. Edit the page files in `app/`
+2. Change text, add sections, modify layout
+3. Save and see changes live!
+
 ## Features Overview
 
 ### Prayer Request System
-
 - Form validation
 - Email notifications via Resend API
 - Success/error feedback
 - Clean, accessible design
 
 ### Fundraiser Progress
-
-- Visual progress bar
-- Automatic percentage calculation
+- Visual progress bar (auto-calculates percentage)
 - Multiple donation platform links
 - Updates timeline
-- JSON-based configuration (easy to update via CMS)
+- Simple JSON configuration
 
 ### Blog with MDX
-
-- Markdown support with React components
-- Automatic post listing
+- Markdown support
+- Automatic post listing on homepage
 - Date formatting
 - SEO-friendly URLs
-
-### Decap CMS Integration
-
-- Visual editor for blog posts
-- JSON file editing for fundraiser
-- Git-based workflow
-- No database required
+- Individual post pages
 
 ## Next Steps
 
-1. Add your actual donation links in `data/fundraiser.json`
-2. Write your personal story in the About page
-3. Create your first blog posts
-4. Set up Resend and add environment variables
-5. Deploy to Vercel or Netlify
-6. Configure Decap CMS authentication
+1. ✏️ Edit `app/about/page.tsx` with your personal story
+2. 📝 Create your first blog post in `content/posts/`
+3. 💰 Update `data/fundraiser.json` with your real donation links
+4. 📧 (Optional) Set up Resend for prayer request emails
+5. 🚀 Deploy to Vercel or Netlify
 
 ## Support
 
 For issues or questions, refer to:
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [Decap CMS Documentation](https://decapcms.org/docs/)
 - [Resend Documentation](https://resend.com/docs)
+
+---
+
+**Simple workflow: Edit MDX files for posts, edit JSON for fundraiser updates. No CMS needed!**

@@ -6,7 +6,7 @@
   "description": "Help us reach our fundraising goal to support our ministry work.",
   "donationLinks": [
     {
-      "platform": "PayPal",
+      "platform": "PushPay",
       "url": "https://paypal.com/donate",
       "description": "One-time or recurring donations"
     },

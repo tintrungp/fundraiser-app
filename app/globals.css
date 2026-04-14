@@ -1,26 +1,86 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Cream/light theme */
+  --background: #FFFFED;
+  --foreground: #2D2D2D;
+
+  /* Accent colors - playful primaries */
+  --primary: #FF6B6B;
+  --primary-foreground: #FFFFFF;
+  --secondary: #4ECDC4;
+  --secondary-foreground: #FFFFFF;
+  --accent: #FFE66D;
+  --accent-foreground: #2D2D2D;
+
+  /* UI colors */
+  --muted: #F5F5DC;
+  --muted-foreground: #6B6B6B;
+  --border: #E8E8D8;
+  --card: #FFFFFF;
+  --card-foreground: #2D2D2D;
+
+  /* Radius for rounded corners */
+  --radius: 0.75rem;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+}
+
+/* Playful, child-like aesthetics */
+* {
+  @apply antialiased;
+}
+
+/* Smooth transitions */
+a, button {
+  @apply transition-colors duration-200;
+}
+
+/* Fun decorative wave dividers */
+.wave-divider {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  color: var(--muted-foreground);
+  opacity: 0.3;
+  user-select: none;
+  padding: 1.5rem 0;
+  font-size: 1.25rem;
+  letter-spacing: 0.5rem;
+}
+
+/* Spinning animations */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
 }
