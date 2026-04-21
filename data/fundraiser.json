@@ -1,9 +1,21 @@
 {
-  "goal": 10000,
-  "current": 3500,
   "currency": "USD",
   "title": "Support Our Mission",
   "description": "Help us reach our fundraising goal to support our ministry work.",
+  "missions": [
+    {
+      "id": "london",
+      "name": "London Missions",
+      "goal": 3000,
+      "current": 1000
+    },
+    {
+      "id": "hfsd",
+      "name": "Hope for San Diego",
+      "goal": 2600,
+      "current": 1000
+    }
+  ],
   "donationLinks": [
     {
       "platform": "PushPay",
@@ -24,12 +36,13 @@
   "updates": [
     {
       "date": "2026-04-20",
-      "message": "As of today we're at $1000 for both HFSD and London!!!"
+      "message": "As of today we're at $1000 for both HFSD and London!!!",
+      "tag": "London"
     },
     {
-      "date": "2024-01-15",
-      "message": "Thank you for your continued support! We've reached 35% of our goal."
-    },
-    
+      "date": "2026-04-20",
+      "message": "As of today we're at $1000 for both HFSD and London!!!",
+      "tag": "HFSD"
+    }
   ]
 }
