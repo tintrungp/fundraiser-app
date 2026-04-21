@@ -38,7 +38,7 @@ export default function Navbar() {
             className="flex items-center justify-center group"
           >
             <div className="text-5xl animate-spin-slow hover:animate-spin">
-              😊
+              ☺︎
             </div>
           </Link>
 

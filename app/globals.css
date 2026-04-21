@@ -2,13 +2,13 @@
 
 :root {
   /* Cream/light theme */
-  --background: #FFFFED;
+  --background: #ffffff;
   --foreground: #2D2D2D;
 
   /* Accent colors - playful primaries */
-  --primary: #FF6B6B;
+  --primary: #ff3232;
   --primary-foreground: #FFFFFF;
-  --secondary: #4ECDC4;
+  --secondary: #006eff;
   --secondary-foreground: #FFFFFF;
   --accent: #FFE66D;
   --accent-foreground: #2D2D2D;

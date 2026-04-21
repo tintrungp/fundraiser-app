@@ -12,20 +12,15 @@ export default function Home() {
         <div className="inline-flex items-center gap-2 mb-4">
           <Sparkles className="w-6 h-6 text-[#FF6B6B]" />
           <h1 className="text-5xl font-bold text-[#2D2D2D]">
-            Latest Updates
+            Trungy's Latest Updates!
           </h1>
           <Sparkles className="w-6 h-6 text-[#4ECDC4]" />
         </div>
         <p className="text-lg text-[#6B6B6B] max-w-2xl mx-auto">
-          Stay updated with our journey and ministry adventures
+          Recent news, updates, and everything in between.
         </p>
       </div>
-
-      {/* Decorative wave divider */}
-      <div className="wave-divider">
-        ‿︵‿︵‿︵‿︵‿︵‿
-      </div>
-
+      <br></br>
       {/* Posts grid */}
       <div className="space-y-8 mt-12">
         {posts.length === 0 ? (
