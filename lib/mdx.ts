@@ -10,6 +10,7 @@ export interface Post {
   date: string;
   excerpt: string;
   content: string;
+  tags: string[];
 }
 
 export function getAllPosts(): Post[] {
@@ -33,6 +34,7 @@ export function getAllPosts(): Post[] {
         date: data.date || new Date().toISOString(),
         excerpt: data.excerpt || '',
         content,
+        tags: Array.isArray(data.tags) ? data.tags : data.tags ? [data.tags] : [],
       };
     });
 
@@ -51,6 +53,7 @@ export function getPostBySlug(slug: string): Post | null {
       date: data.date || new Date().toISOString(),
       excerpt: data.excerpt || '',
       content,
+      tags: Array.isArray(data.tags) ? data.tags : data.tags ? [data.tags] : [],
     };
   } catch {
     return null;
