@@ -16,13 +16,6 @@ export interface Post {
   pdfUrl?: string;
 }
 
-export function getYouTubeId(url: string): string | null {
-  const match = url.match(
-    /(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([^&?\s]+)/
-  );
-  return match ? match[1] : null;
-}
-
 function parsePost(slug: string, fileContents: string): Post {
   const { data, content } = matter(fileContents);
   return {

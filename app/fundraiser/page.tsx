@@ -1,14 +1,14 @@
 import fundraiserData from '@/data/fundraiser.json';
-import { Heart, Sparkles, TrendingUp } from 'lucide-react';
+import { Heart, Sparkles, TrendingUp, ExternalLink } from 'lucide-react';
 
 const TAG_STYLES: Record<string, { bg: string; text: string }> = {
   London: { bg: 'bg-[#FF6B6B]', text: 'text-white' },
-  HFSD: { bg: 'bg-[#4ECDC4]', text: 'text-[#2D2D2D]' },
+  'Hope for SD': { bg: 'bg-[#4ECDC4]', text: 'text-[#2D2D2D]' },
 };
 
 const MISSION_COLORS = [
-  { from: 'from-[#FF6B6B]', to: 'to-[#FFE66D]', accent: 'text-[#FF6B6B]', hoverBorder: 'hover:border-[#FF6B6B]' },
-  { from: 'from-[#4ECDC4]', to: 'to-[#FFE66D]', accent: 'text-[#4ECDC4]', hoverBorder: 'hover:border-[#4ECDC4]' },
+  { from: 'from-[#FF6B6B]', to: 'to-[#FFE66D]', accent: 'text-[#FF6B6B]', hoverBorder: 'hover:border-[#FF6B6B]', hoverShadow: 'hover:shadow-[#FF6B6B]/20' },
+  { from: 'from-[#4ECDC4]', to: 'to-[#FFE66D]', accent: 'text-[#4ECDC4]', hoverBorder: 'hover:border-[#4ECDC4]', hoverShadow: 'hover:shadow-[#4ECDC4]/20' },
 ];
 
 export default function Fundraiser() {
@@ -33,7 +33,7 @@ export default function Fundraiser() {
         <p className="text-base sm:text-lg text-[#6B6B6B] max-w-2xl mx-auto">{description}</p>
       </div>
 
-      {/* Mission Progress Cards */}
+      {/* Mission Progress Cards — clickable, open in new tab */}
       <div className="mb-10 sm:mb-12">
         <div className="flex items-center gap-2 mb-6 sm:mb-8">
           <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-[#4ECDC4]" />
@@ -44,13 +44,19 @@ export default function Fundraiser() {
             const pct = Math.min((mission.current / mission.goal) * 100, 100);
             const colors = MISSION_COLORS[index % MISSION_COLORS.length];
             return (
-              <div
+              <a
                 key={mission.id}
-                className={`bg-white border-2 border-[#E8E8D8] ${colors.hoverBorder} rounded-3xl p-6 sm:p-8 shadow-sm transition-colors duration-300`}
+                href={mission.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group block bg-white border-2 border-[#E8E8D8] ${colors.hoverBorder} rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer`}
               >
-                <h3 className={`text-lg sm:text-xl font-bold mb-4 sm:mb-5 ${colors.accent}`}>
-                  {mission.name}
-                </h3>
+                <div className="flex items-start justify-between mb-4 sm:mb-5">
+                  <h3 className={`text-lg sm:text-xl font-bold ${colors.accent}`}>
+                    {mission.name}
+                  </h3>
+                  <ExternalLink className={`w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity ${colors.accent}`} />
+                </div>
                 <div className="flex justify-between items-baseline mb-3">
                   <span className={`text-2xl sm:text-3xl font-bold ${colors.accent}`}>
                     {formatCurrency(mission.current)}
@@ -71,14 +77,14 @@ export default function Fundraiser() {
                   <p className={`font-bold text-sm sm:text-base ${colors.accent}`}>{pct.toFixed(1)}% funded</p>
                   <p className="text-xs sm:text-sm text-[#6B6B6B]">{formatCurrency(mission.goal - mission.current)} to go!</p>
                 </div>
-              </div>
+              </a>
             );
           })}
         </div>
       </div>
 
       {/* Decorative wave divider */}
-      <div className="wave-divider text-center text-[#E8E8D8] text-lg">‿︵‿︵‿︵‿︵‿︵‿</div>
+      <div className="text-center text-[#E8E8D8] text-lg mb-0">‿︵‿︵‿︵‿︵‿︵‿</div>
 
       {/* Donation Links */}
       <div className="mb-10 sm:mb-16 mt-8 sm:mt-12">
