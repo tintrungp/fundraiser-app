@@ -20,7 +20,8 @@
     {
       "platform": "PushPay",
       "url": "https://paypal.com/donate",
-      "description": "One-time or recurring donations"
+      "description": "One-time or recurring donations",
+      "badge": "Preferred for London Donations!"
     },
     {
       "platform": "Venmo",

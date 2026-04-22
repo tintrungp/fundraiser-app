@@ -11,50 +11,56 @@ export interface Post {
   excerpt: string;
   content: string;
   tags: string[];
+  coverImage?: string;
+  youtubeUrl?: string;
+  pdfUrl?: string;
+}
+
+export function getYouTubeId(url: string): string | null {
+  const match = url.match(
+    /(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([^&?\s]+)/
+  );
+  return match ? match[1] : null;
+}
+
+function parsePost(slug: string, fileContents: string): Post {
+  const { data, content } = matter(fileContents);
+  return {
+    slug,
+    title: data.title || slug,
+    date: data.date || new Date().toISOString(),
+    excerpt: data.excerpt || '',
+    content,
+    tags: Array.isArray(data.tags) ? data.tags : data.tags ? [data.tags] : [],
+    coverImage: data.coverImage || undefined,
+    youtubeUrl: data.youtubeUrl || undefined,
+    pdfUrl: data.pdfUrl || undefined,
+  };
 }
 
 export function getAllPosts(): Post[] {
-  // Ensure directory exists
-  if (!fs.existsSync(postsDirectory)) {
-    return [];
-  }
+  if (!fs.existsSync(postsDirectory)) return [];
 
   const fileNames = fs.readdirSync(postsDirectory);
-  const allPostsData = fileNames
-    .filter((fileName) => fileName.endsWith('.mdx'))
+  const posts = fileNames
+    .filter((f) => f.endsWith('.mdx'))
     .map((fileName) => {
       const slug = fileName.replace(/\.mdx$/, '');
-      const fullPath = path.join(postsDirectory, fileName);
-      const fileContents = fs.readFileSync(fullPath, 'utf8');
-      const { data, content } = matter(fileContents);
-
-      return {
-        slug,
-        title: data.title || slug,
-        date: data.date || new Date().toISOString(),
-        excerpt: data.excerpt || '',
-        content,
-        tags: Array.isArray(data.tags) ? data.tags : data.tags ? [data.tags] : [],
-      };
+      const fileContents = fs.readFileSync(
+        path.join(postsDirectory, fileName),
+        'utf8'
+      );
+      return parsePost(slug, fileContents);
     });
 
-  return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
+  return posts.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
 export function getPostBySlug(slug: string): Post | null {
   try {
     const fullPath = path.join(postsDirectory, `${slug}.mdx`);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
-    const { data, content } = matter(fileContents);
-
-    return {
-      slug,
-      title: data.title || slug,
-      date: data.date || new Date().toISOString(),
-      excerpt: data.excerpt || '',
-      content,
-      tags: Array.isArray(data.tags) ? data.tags : data.tags ? [data.tags] : [],
-    };
+    return parsePost(slug, fileContents);
   } catch {
     return null;
   }
