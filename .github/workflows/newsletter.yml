@@ -1,0 +1,44 @@
+name: Send newsletter for new posts
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/posts/**/*.mdx"
+
+jobs:
+  send-newsletter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Detect newly added MDX posts
+        id: new-posts
+        run: |
+          NEW=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/posts/*.mdx')
+          echo "Found new posts: $NEW"
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          echo "$NEW" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Send newsletter for each new post
+        if: steps.new-posts.outputs.files != ''
+        env:
+          SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+          NEWSLETTER_SECRET: ${{ secrets.NEWSLETTER_SECRET }}
+        run: |
+          while IFS= read -r file; do
+            [ -z "$file" ] && continue
+            slug=$(basename "$file" .mdx)
+            echo "Sending newsletter for: $slug"
+            response=$(curl -s -o /dev/null -w "%{http_code}" \
+              -X POST "$SITE_URL/api/send-newsletter" \
+              -H "Content-Type: application/json" \
+              -d "{\"slug\":\"$slug\",\"secret\":\"$NEWSLETTER_SECRET\"}")
+            echo "Response status: $response"
+            if [ "$response" != "200" ]; then
+              echo "Warning: newsletter send returned $response for $slug"
+            fi
+          done <<< "${{ steps.new-posts.outputs.files }}"

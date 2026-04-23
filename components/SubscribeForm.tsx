@@ -50,7 +50,7 @@ export default function SubscribeForm() {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="your@email.com"
           required
-          className="flex-1 px-4 py-2.5 border-2 border-[#E8E8D8] rounded-xl focus:outline-none focus:border-[#4ECDC4] bg-white text-[#2D2D2D] placeholder:text-[#6B6B6B] text-sm"
+          className="flex-1 px-4 py-2.5 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#4ECDC4] bg-white text-gray-900 placeholder:text-gray-400 text-sm"
         />
         <button
           type="submit"
@@ -62,7 +62,7 @@ export default function SubscribeForm() {
         </button>
       </form>
       {status === 'error' && (
-        <p className="text-red-600 text-sm mt-2 text-center">{errorMsg}</p>
+        <p className="text-red-500 text-sm mt-2 text-center">{errorMsg}</p>
       )}
     </div>
   );
