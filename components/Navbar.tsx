@@ -8,8 +8,8 @@ export default function Navbar() {
 
           {/* Updates */}
           <Link href="/" className="flex flex-col items-center gap-0.5 group">
-            <div className="p-1.5 sm:p-2 rounded-full bg-white group-hover:bg-[#FFE66D] transition-colors">
-              <img src="/updates.svg" alt="Updates" className="w-5 h-5 sm:w-6 sm:h-6" />
+            <div className="p-2.5 sm:p-3 rounded-full bg-white group-hover:bg-[#FFE66D] transition-colors">
+              <img src="/updates.svg" alt="Updates" className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px]" />
             </div>
             <span className="text-xs sm:text-sm font-medium text-[#2D2D2D] group-hover:text-[#FF6B6B] transition-colors">
               Updates
@@ -18,8 +18,8 @@ export default function Navbar() {
 
           {/* Donation */}
           <Link href="/fundraiser" className="flex flex-col items-center gap-0.5 group">
-            <div className="p-1.5 sm:p-2 rounded-full bg-white group-hover:bg-[#FFE66D] transition-colors">
-              <img src="/donate.svg" alt="Donation" className="w-5 h-5 sm:w-6 sm:h-6" />
+            <div className="p-2.5 sm:p-3 rounded-full bg-white group-hover:bg-[#FFE66D] transition-colors">
+              <img src="/donate.svg" alt="Donation" className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px]" />
             </div>
             <span className="text-xs sm:text-sm font-medium text-[#2D2D2D] group-hover:text-[#FF6B6B] transition-colors">
               Donation
@@ -31,14 +31,14 @@ export default function Navbar() {
             <img
               src="/sun.svg"
               alt="Home"
-              className="w-10 h-10 sm:w-14 sm:h-14 animate-spin-slow hover:[animation-play-state:paused]"
+              className="w-[60px] h-[60px] sm:w-[84px] sm:h-[84px] animate-spin-slow hover:[animation-play-state:paused]"
             />
           </Link>
 
           {/* Prayer */}
           <Link href="/prayer" className="flex flex-col items-center gap-0.5 group">
-            <div className="p-1.5 sm:p-2 rounded-full bg-white group-hover:bg-[#FFE66D] transition-colors">
-              <img src="/prayer.svg" alt="Prayer" className="w-5 h-5 sm:w-6 sm:h-6" />
+            <div className="p-2.5 sm:p-3 rounded-full bg-white group-hover:bg-[#FFE66D] transition-colors">
+              <img src="/prayer.svg" alt="Prayer" className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px]" />
             </div>
             <span className="text-xs sm:text-sm font-medium text-[#2D2D2D] group-hover:text-[#FF6B6B] transition-colors">
               Prayer
@@ -47,8 +47,8 @@ export default function Navbar() {
 
           {/* About */}
           <Link href="/about" className="flex flex-col items-center gap-0.5 group">
-            <div className="p-1.5 sm:p-2 rounded-full bg-white group-hover:bg-[#FFE66D] transition-colors">
-              <img src="/about.svg" alt="About" className="w-5 h-5 sm:w-6 sm:h-6" />
+            <div className="p-2.5 sm:p-3 rounded-full bg-white group-hover:bg-[#FFE66D] transition-colors">
+              <img src="/about.svg" alt="About" className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px]" />
             </div>
             <span className="text-xs sm:text-sm font-medium text-[#2D2D2D] group-hover:text-[#FF6B6B] transition-colors">
               About
