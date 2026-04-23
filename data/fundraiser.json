@@ -7,13 +7,15 @@
       "id": "london",
       "name": "London Missions",
       "goal": 3000,
-      "current": 1000
+      "current": 1000,
+      "url": "https://paypal.com/donate"
     },
     {
       "id": "hfsd",
       "name": "Hope for San Diego",
       "goal": 2600,
-      "current": 1000
+      "current": 1000,
+      "url": "https://gofundme.com"
     }
   ],
   "donationLinks": [
@@ -43,7 +45,7 @@
     {
       "date": "2026-04-20",
       "message": "As of today we're at $1000 for both HFSD and London!!!",
-      "tag": "HFSD"
+      "tag": "Hope for SD"
     }
   ]
 }

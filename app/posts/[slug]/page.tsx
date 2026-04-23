@@ -1,12 +1,13 @@
 import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import { getPostBySlug, getAllPosts, getYouTubeId } from '@/lib/mdx';
+import { getPostBySlug, getAllPosts } from '@/lib/mdx';
+import { getYouTubeId } from '@/lib/utils';
 import Link from 'next/link';
 import { FileText } from 'lucide-react';
 
 const TAG_STYLES: Record<string, { bg: string; text: string }> = {
   London: { bg: 'bg-[#FF6B6B]', text: 'text-white' },
-  HFSD: { bg: 'bg-[#4ECDC4]', text: 'text-[#2D2D2D]' },
+  'Hope for SD': { bg: 'bg-[#4ECDC4]', text: 'text-[#2D2D2D]' },
 };
 
 function YouTubeEmbed({ url, id }: { url?: string; id?: string }) {
