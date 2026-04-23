@@ -33,16 +33,16 @@ export default function Prayer() {
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-8 sm:py-12">
-      <h1 className="text-3xl sm:text-4xl font-bold text-[#2D2D2D] mb-3 sm:mb-4">Prayer Requests</h1>
-      <p className="text-base sm:text-lg text-[#6B6B6B] mb-6 sm:mb-8">
+      <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Prayer Requests</h1>
+      <p className="text-base sm:text-lg text-gray-500 mb-6 sm:mb-8">
         We would be honored to pray for you. Share your prayer request below and we will lift it
         up in prayer.
       </p>
 
-      <div className="bg-white border-2 border-[#E8E8D8] rounded-2xl p-6 sm:p-8">
+      <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 sm:p-8">
         <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-[#2D2D2D] mb-2">
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
               Name
             </label>
             <input
@@ -51,12 +51,12 @@ export default function Prayer() {
               required
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full px-4 py-2.5 border-2 border-[#E8E8D8] rounded-xl focus:outline-none focus:border-[#4ECDC4] text-[#2D2D2D]"
+              className="w-full px-4 py-2.5 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#4ECDC4] text-gray-900"
             />
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-[#2D2D2D] mb-2">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
               Email
             </label>
             <input
@@ -65,12 +65,12 @@ export default function Prayer() {
               required
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full px-4 py-2.5 border-2 border-[#E8E8D8] rounded-xl focus:outline-none focus:border-[#4ECDC4] text-[#2D2D2D]"
+              className="w-full px-4 py-2.5 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#4ECDC4] text-gray-900"
             />
           </div>
 
           <div>
-            <label htmlFor="request" className="block text-sm font-medium text-[#2D2D2D] mb-2">
+            <label htmlFor="request" className="block text-sm font-medium text-gray-700 mb-2">
               Prayer Request
             </label>
             <textarea
@@ -79,7 +79,7 @@ export default function Prayer() {
               rows={6}
               value={formData.request}
               onChange={(e) => setFormData({ ...formData, request: e.target.value })}
-              className="w-full px-4 py-2.5 border-2 border-[#E8E8D8] rounded-xl focus:outline-none focus:border-[#4ECDC4] text-[#2D2D2D] resize-none"
+              className="w-full px-4 py-2.5 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#4ECDC4] text-gray-900 resize-none"
             />
           </div>
 

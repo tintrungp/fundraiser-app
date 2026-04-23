@@ -1,26 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  /* Cream/light theme */
   --background: #ffffff;
-  --foreground: #2D2D2D;
-
-  /* Accent colors - playful primaries */
-  --primary: #ff3232;
-  --primary-foreground: #FFFFFF;
-  --secondary: #006eff;
-  --secondary-foreground: #FFFFFF;
-  --accent: #FFE66D;
-  --accent-foreground: #2D2D2D;
-
-  /* UI colors */
-  --muted: #F5F5DC;
-  --muted-foreground: #6B6B6B;
-  --border: #E8E8D8;
-  --card: #FFFFFF;
-  --card-foreground: #2D2D2D;
-
-  /* Radius for rounded corners */
+  --foreground: #111827;
+  --primary: #FF6B6B;
+  --primary-foreground: #ffffff;
+  --secondary: #4ECDC4;
+  --secondary-foreground: #ffffff;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+  --border: #e5e7eb;
+  --card: #ffffff;
+  --card-foreground: #111827;
   --radius: 0.75rem;
 }
 
@@ -31,8 +22,6 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
@@ -48,17 +37,14 @@ body {
   font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
 }
 
-/* Playful, child-like aesthetics */
 * {
   @apply antialiased;
 }
 
-/* Smooth transitions */
 a, button {
   @apply transition-colors duration-200;
 }
 
-/* Fun decorative wave dividers */
 .wave-divider {
   position: relative;
   width: 100%;
@@ -71,14 +57,9 @@ a, button {
   letter-spacing: 0.5rem;
 }
 
-/* Spinning animations */
 @keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 .animate-spin-slow {
