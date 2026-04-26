@@ -35,8 +35,9 @@ export default function Prayer() {
     <div className="max-w-2xl mx-auto px-4 py-8 sm:py-12">
       <h1 className="text-3xl sm:text-4xl font-bold text-[#2D2D2D] mb-3 sm:mb-4">Prayer Requests</h1>
       <p className="text-base sm:text-lg text-[#6B6B6B] mb-6 sm:mb-8">
-        We would be honored to pray for you. Share your prayer request below and we will lift it
-        up in prayer.
+        Hi!! Prayer has been a huge component of my life this season, and I don't want to stop with prayer for just me.
+        So I would love to hear your prayer requests, so I can support you too!  Feel free to share any prayer request 
+        with me here! I get an email each time one is sent, and so I will be sure to pray over it and check in with you.
       </p>
 
       <div className="bg-white border-2 border-[#E8E8D8] rounded-2xl p-6 sm:p-8">

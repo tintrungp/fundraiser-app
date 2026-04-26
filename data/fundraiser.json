@@ -7,45 +7,41 @@
       "id": "london",
       "name": "London Missions",
       "goal": 3000,
-      "current": 1000,
-      "url": "https://paypal.com/donate"
+      "current": 1845.67,
+      "url": "https://redeemersd.servicereef.com/events/redeemer-presbyterian-church/london-uk-inspire-st-james/participants/tin-trung-ngoc-pham"
     },
     {
       "id": "hfsd",
       "name": "Hope for San Diego",
       "goal": 2600,
-      "current": 1000,
-      "url": "https://gofundme.com"
+      "current": 1150,
+      "url": "https://pro.gofundme.com/fundraiser/7122166"
     }
   ],
   "donationLinks": [
     {
       "platform": "PushPay",
-      "url": "https://paypal.com/donate",
-      "description": "One-time or recurring donations",
+      "url": "https://redeemersd.servicereef.com/events/redeemer-presbyterian-church/london-uk-inspire-st-james/participants/tin-trung-ngoc-pham",
+      "description": "London Mission donation page!",
       "badge": "Preferred for London Donations!"
     },
     {
       "platform": "Venmo",
-      "url": "https://venmo.com",
+      "url": "http://venmo.com/u/tin-trung",
       "description": "Quick mobile donations"
     },
     {
       "platform": "GoFundMe",
-      "url": "https://gofundme.com",
-      "description": "View our full campaign"
+      "url": "https://pro.gofundme.com/fundraiser/7122166",
+      "description": "Hope For San Diego donation page!",
+      "badge": "Preferred for HFSD donations"
     }
   ],
   "updates": [
     {
-      "date": "2026-04-20",
-      "message": "As of today we're at $1000 for both HFSD and London!!!",
-      "tag": "London"
-    },
-    {
-      "date": "2026-04-20",
-      "message": "As of today we're at $1000 for both HFSD and London!!!",
-      "tag": "Hope for SD"
+      "date": "2026-04-26",
+      "message": "Huge thank you to all who have supported me for both HFSD and London!!!",
+      "tag": "General"
     }
   ]
 }

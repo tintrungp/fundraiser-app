@@ -5,36 +5,21 @@ export default function About() {
 
       <div className="space-y-4 sm:space-y-6">
         <div className="bg-white border-2 border-[#E8E8D8] rounded-2xl p-6 sm:p-8">
-          <h2 className="text-xl sm:text-2xl font-semibold text-[#2D2D2D] mb-4">Our Mission</h2>
+          <h2 className="text-xl sm:text-2xl font-semibold text-[#2D2D2D] mb-4">Hi, I'm Tin-Trung</h2>
           <p className="text-[#6B6B6B] mb-4">
-            Welcome to our ministry. We are dedicated to serving and making a difference through
-            faith, community, and action.
+            For those who don't know, I'm 24 and have been living in San Diego ever since 2019! 
+            I went to UC San Diego and eventually stumbled into a job here in San Diego doing
+            software engineering. In the years that I've been living here, I began to attend a 
+            church called Redeemer Presybterian in Encinitas. 
           </p>
           <p className="text-[#6B6B6B]">
-            This is where you can share more about yourself, your calling, and what drives your
-            ministry work.
-          </p>
-        </div>
-
-        <div className="bg-white border-2 border-[#E8E8D8] rounded-2xl p-6 sm:p-8">
-          <h2 className="text-xl sm:text-2xl font-semibold text-[#2D2D2D] mb-4">Our Story</h2>
-          <p className="text-[#6B6B6B] mb-4">
-            Share your personal story and journey here. Talk about how you were called to this
-            work and what impact you hope to make.
+            My time in San Diego has felt like quite the journey. It has place that has gone from
+            unfamiliar (when I first arrived), to home (when I met all my college besties), back to 
+            unfamiliar (when they all left rip), and slowly into home (meeting a whole lot of great 
+            people) again.
           </p>
           <p className="text-[#6B6B6B]">
-            Add details about your background, experiences, and what makes your ministry unique.
-          </p>
-        </div>
-
-        <div className="bg-white border-2 border-[#E8E8D8] rounded-2xl p-6 sm:p-8">
-          <h2 className="text-xl sm:text-2xl font-semibold text-[#2D2D2D] mb-4">Get Involved</h2>
-          <p className="text-[#6B6B6B] mb-4">
-            We invite you to join us in this journey through prayer and support.
-          </p>
-          <p className="text-[#6B6B6B]">
-            Visit our Prayer and Fundraiser pages to learn more about how you can be part of
-            what God is doing through this ministry.
+            I still need to reflect and write on this, coming soon haha...
           </p>
         </div>
       </div>
