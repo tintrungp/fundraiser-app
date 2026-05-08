@@ -7,14 +7,14 @@
       "id": "london",
       "name": "London Missions",
       "goal": 3000,
-      "current": 1845.67,
+      "current": 2980,
       "url": "https://redeemersd.servicereef.com/events/redeemer-presbyterian-church/london-uk-inspire-st-james/participants/tin-trung-ngoc-pham"
     },
     {
       "id": "hfsd",
       "name": "Hope for San Diego",
       "goal": 2600,
-      "current": 1150,
+      "current": 2445,
       "url": "https://pro.gofundme.com/fundraiser/7122166"
     }
   ],
@@ -38,6 +38,11 @@
     }
   ],
   "updates": [
+    {
+      "date": "2026-05-08",
+      "message": "HOLY COW! We're actually closing in on reaching both fundraising goals! Appreciate everyone for helping and supporting financially to the mission and for Hope for San Diego!",
+      "tag": "General"
+    },
     {
       "date": "2026-04-26",
       "message": "Huge thank you to all who have supported me for both HFSD and London!!!",
